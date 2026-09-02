@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>netundo? — Live Network Health</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top wrap">
+  <a class="brand" href="#top"><span class="mark">+</span> netundo?</a>
+  <nav><a href="#live">LIVE</a><a href="#areas">AREAS</a><a href="#history">HISTORY</a><a href="#report">REPORT</a></nav>
+  <a class="diag" href="https://ennachu.vercel.app">RUN DIAGNOSIS ↗</a>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <div class="kicker">NETWORK HEALTH / INDIA</div>
+  <div class="hero-grid">
+    <div>
+      <h1>Is the net<br><span>down around you?</span></h1>
+      <p>See live network health, local reports and recent connection performance around your area.</p>
+      <div class="search"><input id="areaInput" placeholder="Enter area or PIN code" inputmode="numeric"><button id="checkArea">CHECK AREA →</button></div>
+      <div class="privacy">NO LOGIN · NO BROWSING HISTORY · NO IP STORED</div>
+    </div>
+    <div class="rat-wrap" aria-hidden="true"><div class="matrix-rat"><i class="e l"></i><i class="e r"></i><i class="eye l"></i><i class="eye r"></i><i class="nose"></i><i class="snout"></i><i class="w w1"></i><i class="w w2"></i><i class="w w3"></i><i class="w w4"></i><i class="w w5"></i><i class="w w6"></i></div><div class="code">01001 10110 01101<br>11010 01001 10110<br>00110 11010 01011</div></div>
+  </div>
+</section>
+
+<section id="live" class="wrap section">
+  <div class="section-head"><h2>LIVE</h2><span id="updated">UPDATING</span></div>
+  <div class="status-grid">
+    <div class="big-status"><span>INDIA NETWORK HEALTH</span><strong id="nationalScore">—</strong><em>/100</em><b id="nationalLabel">COLLECTING</b></div>
+    <div><span>REPORTS / 30 MIN</span><strong id="reports">—</strong><small>anonymous signals</small></div>
+    <div><span>AREAS MONITORED</span><strong id="areasCount">—</strong><small>local zones</small></div>
+  </div>
+  <div class="ticker" id="ticker">LIVE FEED · Waiting for network signals…</div>
+</section>
+
+<section id="areas" class="wrap section">
+  <div class="section-head"><h2>NETWORK AROUND YOU</h2><span id="selectedArea">AREA / —</span></div>
+  <div class="area-card">
+    <div class="area-title"><div><span>LOCAL NETWORK HEALTH</span><strong id="areaScore">—</strong><em>/100</em></div><b id="areaLabel">SELECT AN AREA</b></div>
+    <div class="provider-row"><span>PROVIDER</span><button class="provider active">JIO</button><button class="provider">AIRTEL</button><button class="provider">VI</button><button class="provider">BSNL</button><button class="provider">ALL</button></div>
+    <div class="metrics"><div><span>DOWNLOAD</span><b id="down">—</b><small>Mbps</small></div><div><span>UPLOAD</span><b id="up">—</b><small>Mbps</small></div><div><span>LATENCY</span><b id="ping">—</b><small>ms</small></div><div><span>LOSS</span><b id="loss">—</b><small>%</small></div></div>
+    <p id="areaText">Enter your area or PIN to see the local baseline.</p>
+  </div>
+</section>
+
+<section class="wrap section map-section">
+  <div class="section-head"><h2>LIVE MAP</h2><span>ANONYMOUS SIGNALS</span></div>
+  <div class="map"><div class="map-grid"></div><span class="pin p1">JIO · 72</span><span class="pin p2">AIRTEL · 84</span><span class="pin p3">VI · 58</span><span class="pin p4">JIO · 64</span><div class="map-center">INDIA<br><b>NETWORK HEALTH</b></div></div>
+  <p class="note">Map values are aggregated network-health signals. They do not identify individual users, devices or IP addresses.</p>
+</section>
+
+<section id="history" class="wrap section">
+  <div class="section-head"><h2>NETWORK HISTORY</h2><div class="tabs"><button class="tab active">24H</button><button class="tab">7D</button><button class="tab">30D</button></div></div>
+  <div class="history-chart"><div class="y y1">100</div><div class="y y2">75</div><div class="y y3">50</div><div class="y y4">25</div><div class="linechart"></div></div>
+  <div class="history-stats"><div><span>LOCAL HEALTH</span><b>72/100</b></div><div><span>LOWEST</span><b>58/100</b></div><div><span>PEAK REPORTS</span><b>19</b></div><div><span>DATA POINTS</span><b>1,248</b></div></div>
+</section>
+
+<section class="wrap section" id="report">
+  <div class="section-head"><h2>REPORT A PROBLEM</h2><span>OPTIONAL</span></div>
+  <div class="report-card">
+    <h3>Is your network behaving badly?</h3><p>Share one anonymous signal to help people around you understand whether a problem is widespread.</p>
+    <div class="report-grid"><select id="reportProvider"><option>Jio</option><option>Airtel</option><option>Vi</option><option>BSNL</option><option>Other ISP</option></select><select id="reportIssue"><option>Slow internet</option><option>No internet</option><option>High latency</option><option>Unstable connection</option><option>Mobile signal problem</option></select><input id="reportArea" placeholder="Area / PIN (optional)"></div>
+    <label class="consent"><input type="checkbox" id="consent"> I understand this sends only the network issue and approximate area, not my identity, browsing history or IP address.</label>
+    <button id="sendReport">SEND ANONYMOUS REPORT →</button><div id="reportMsg" class="msg"></div>
+  </div>
+</section>
+
+<section class="wrap footer"><div><b>netundo?</b><p>Know whether it's you, your network, or the internet.</p></div><div><span>PRIVACY FIRST</span><span>NO ACCOUNT</span><span>NO USER HISTORY</span><span>NETWORK HEALTH ONLY</span></div></section>
+</main>
+<script src="app.js"></script>
+</body></html>
