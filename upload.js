@@ -1,1 +1,0 @@
-export default async function handler(req,res){if(req.method!=='POST')return res.status(405).end();let bytes=0;for await(const c of req) bytes+=c.length;res.setHeader('Cache-Control','no-store');res.status(204).end()}
